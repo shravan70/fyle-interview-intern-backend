@@ -91,3 +91,7 @@ class Assignment(db.Model):
     @classmethod
     def get_assignments_by_teacher(cls):
         return cls.query.all()
+    
+    @classmethod
+    def get_assignments_by_principal(cls,principal_id):
+        return cls.filter(cls.principal_id == principal_id)
